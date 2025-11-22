@@ -1,0 +1,80 @@
+/* CONTENEDOR */
+.kapdal-form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    padding: 10px 0 10px;
+}
+
+.kapdal-form-section {
+    width: 90%;
+    max-width: 650px;
+    background: #F4F4F4;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* TITULO */
+.kapdal-form-title {
+    text-align: center;
+    color: #0C7C77;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+/* FILAS */
+.kapdal-form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* INPUTS */
+.kapdal-input, .kapdal-select, .kapdal-textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s ease;
+    background: #fff;
+}
+
+.kapdal-input:focus,
+.kapdal-select:focus,
+.kapdal-textarea:focus {
+    border-color: #12A596;
+}
+
+/* SELECT */
+.kapdal-select {
+    margin-bottom: 15px;
+}
+
+/* TEXTAREA */
+.kapdal-textarea {
+    height: 120px;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+/* BOTÓN */
+.kapdal-btn {
+    width: 100%;
+    padding: 14px;
+    background: #12A596;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: 0.25s ease;
+}
+
+.kapdal-btn:hover {
+    background: #0C7C77;
+}

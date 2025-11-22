@@ -1,0 +1,78 @@
+.benefits-title {
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+/* Fondo general */
+.kapdal-benefits {
+    background: #0C7C77;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Tarjetas */
+.benefit-card {
+    background: #12A596;
+    width: 300px;
+    padding: 35px 20px 60px;
+    border-radius: 18px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: visible;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Íconos */
+.benefit-icon {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 15px;
+}
+
+/* Títulos */
+.benefit-card h3 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin: 10px 0;
+}
+
+/* Caja blanca: ahora aparece EXACTAMENTE en el borde inferior */
+.benefit-hover {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 20px); /* Oculta por debajo de la tarjeta */
+    width: 260px;
+    background: #fff;
+    color: #333;
+    padding: 18px 15px;
+    border-radius: 12px;
+    font-size: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.35s ease;
+}
+
+/* Hover: aparece solo un poco arriba y con fade */
+.benefit-card:hover .benefit-hover {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, 10px); /* se desliza suave hacia arriba */
+}
+
+/* Animación suave de la tarjeta */
+.benefit-card:hover {
+    transform: translateY(-8px);
+}

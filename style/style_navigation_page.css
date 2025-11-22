@@ -1,0 +1,46 @@
+.home-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
+    background-color: white;
+    border-bottom: 1px solid #0C7C77
+;
+}
+.logo_prueba_kapdal{
+    width: 90px;
+    margin-left: 150px;
+}
+/* Logo */
+.Link-logo-home {
+    font-size: 28px;
+    font-weight: 800;
+    color: #000;
+    margin-left: 100px;
+}
+
+/* Contenedor del menú */
+.container-2 div {
+    display: flex;
+    gap: 40px; /* Separación entre palabras del menú */
+    margin-right: 100px;
+}
+
+/* Estilos generales de los links del menú */
+.container-2 a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+    transition: 0.3s ease;
+}
+
+/* Color del enlace activo (como INICIO de la imagen) */
+.Link-inicio {
+    color: purple;
+}
+
+/* Hover del menú */
+.container-2 a:hover {
+    color: purple;
+}

@@ -1,0 +1,88 @@
+/* ===== SECCIÓN QUIÉNES SOMOS (CONTAINER-4) ===== */
+
+.container-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 40px 80px;
+    background-color: #eef3fb;
+}
+
+.info-left img {
+    width: 500px;
+    height: auto;
+    object-fit: contain;
+}
+
+.info-right {
+    max-width: 600px;
+}
+
+.info-right h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.info-right p {
+    text-align: justify;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 18px;
+}
+
+/* 🚀 RESPONSIVE MEJORADO */
+@media (max-width: 900px) {
+
+    .container-4 {
+        flex-direction: column;
+        gap: 30px;
+
+        /* Reduce el padding lateral para que no queden espacios grandes */
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .info-left img {
+        /* Imagen más pequeña y ajustable */
+        width: 70%;
+        max-width: 250px;
+    }
+
+    .info-right {
+        /* Evita márgenes gigantes en móvil */
+        max-width: 100%;
+    }
+
+    .info-right p {
+        text-align: justify; /* más legible en móvil */
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Ajuste extra para pantallas muy pequeñas */
+@media (max-width: 480px) {
+
+    .container-4 {
+        padding: 25px 15px;
+    }
+
+    .info-left img {
+        width: 60%;
+        max-width: 180px;
+    }
+
+    .info-right h2 {
+        font-size: 26px;
+    }
+
+    .info-right p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+}

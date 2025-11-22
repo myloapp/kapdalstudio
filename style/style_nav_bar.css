@@ -1,0 +1,159 @@
+/* --- NAVBAR GENERAL --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px; /* altura reducida */
+    padding: 0 40px;
+    background: white;
+    border-bottom: 2px solid #0C7C77;
+    position: relative;
+}
+
+/* LOGO */
+.logo_prueba_kapdal {
+    width: 80px;
+}
+
+/* ---------------------- */
+/*     BOTÓN CURSOS       */
+/* ---------------------- */
+.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn-cursos {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+    transition: 0.3s ease;
+}
+
+.btn-cursos:hover {
+    background: rgba(200, 255, 240, 0.1);
+    border-color: #0C7C77;
+    box-shadow: 0px 0px 15px rgba(111, 209, 175, 1);
+    transform: translateY(-2px);
+}
+
+.btn-cursos .icon {
+    font-size: 14px;
+    color: #0C7C77;
+    display: flex;
+    align-items: center;
+}
+
+
+/* ---------------------- */
+/*      LINKS NORMALES    */
+/* ---------------------- */
+.navbar-links {
+    display: flex;
+    gap: 35px;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: #222;
+    transition: 0.3s;
+}
+
+.navbar-links a:hover {
+    color: #0C7C77;
+}
+
+/* ---------------------- */
+/*   MENÚ HAMBURGUESA     */
+/* ---------------------- */
+.hamburger {
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+}
+
+/* ---------------------- */
+/*   MENÚ MÓVIL           */
+/* ---------------------- */
+.mobile-menu {
+    position: absolute;
+    top: 70px; /* debajo del navbar */
+    right: 40px;
+    width: 250px;
+    background: white;
+    padding: 0;
+    border-radius: 0 0 20px 20px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+
+    max-height: 0;
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+    transition:
+        max-height 0.5s ease,
+        opacity 0.4s ease,
+        padding 0.3s ease,
+        box-shadow 0.4s ease;
+}
+
+.mobile-menu.active {
+    padding: 20px;
+    max-height: 400px;
+    opacity: 1;
+    box-shadow: 0px 4px 18px rgba(0,0,0,0.15);
+}
+
+.mobile-menu a {
+    padding: 12px 0;
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.mobile-menu a:hover {
+    color: #0C7C77;
+    padding-left: 8px;
+}
+
+/* ---------------------- */
+/*      RESPONSIVE        */
+/* ---------------------- */
+@media (max-width: 850px) {
+
+    .navbar-center {
+        display: none; /* oculta botón cursos en móvil */
+    }
+
+    .navbar-links {
+        display: none; /* oculta menú normal */
+    }
+
+    .hamburger {
+        display: block; /* mostrar botón hamburguesa */
+    }
+}
+
+/* Forzar que los enlaces del menú móvil sean uno debajo del otro */
+.mobile-menu a {
+    display: block !important;   /* se apilan verticalmente */
+    width: 100%;                 /* cada uno ocupa todo el espacio */
+    box-sizing: border-box;      /* evita desbordes */
+}
+.navbar {
+    z-index: 999;
+}
+
+.mobile-menu {
+    z-index: 9999; /* siempre arriba de todo */
+}

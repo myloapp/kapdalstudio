@@ -1,0 +1,66 @@
+/* CONTENEDOR PRINCIPAL */
+.welcome-kapdal {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Título arriba */
+    align-items: center;    /* Centrado */
+    text-align: center;
+    margin: 0px 0;
+}
+
+/* TÍTULO */
+.title-kapdal {
+    font-size: 55px;
+    font-weight: 800;
+    color: #0C7C77;
+    margin-bottom: 40px;
+}
+
+/* CONTENEDOR DE IMÁGENES */
+.banner-wrapper {
+    position: relative;
+    width: 80%;        /* 👉 Las imágenes ocuparán el 80% del ancho */
+    max-width: 1200px; /* Para pantallas grandes */
+}
+
+/* CONTENEDOR PARA EL DEGRADADO */
+.banner-base-container {
+    position: relative;
+    width: 100%;
+}
+
+/* IMAGEN BASE */
+.banner-base {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* DEGRADADO EN LA PARTE INFERIOR */
+.banner-base-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%; /* Ajustable */
+    background: linear-gradient(transparent, white);
+    pointer-events: none;
+}
+
+/* IMAGEN FLOTANTE */
+.banner-floating {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    animation: floatUpDown 4s ease-in-out infinite;
+}
+
+/* ANIMACIÓN FLOTANTE */
+@keyframes floatUpDown {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}

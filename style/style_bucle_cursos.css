@@ -1,0 +1,45 @@
+/* INICIO BUCLE CURSOS */
+.bucle-cursos {
+    width: 100%;
+    padding: 15px 0;
+    overflow: hidden;
+}
+
+.slider-cursos {
+    width: 100%;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.track-cursos {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* separación amigable */
+    width: calc(80px * 24 + 40px * 24);
+    animation: cursos-loop 40s linear infinite;
+}
+
+.curso img {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));
+}
+
+/* ANIMACIÓN SIN ESPACIOS NI VACÍOS */
+@keyframes cursos-loop {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50%)); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .track-cursos {
+        gap: 25px;
+    }
+    .curso img {
+        width: 60px;
+    }
+}

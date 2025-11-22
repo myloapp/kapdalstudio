@@ -1,0 +1,118 @@
+/* Fuente global (redonda y amigable) */
+:root {
+  --accent1: #12A596;
+  --accent2: #0C7C77;
+}
+
+/* Aplica Poppins a todo el bloque (asegúrate de tener el <link> en el HTML) */
+body, .details_kapdal_, .stat-card-inner h2, .stat-card-inner p {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fondo mitad blanco, mitad gris tenue (o 'grit' sutil) */
+.details_kapdal_ {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, white 50%, #eef3fb 50%);
+}
+
+/* Grid responsive */
+.stats-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* WRAPPER: crea el borde degradado redondeado sin puntas */
+.stat-card-wrapper {
+  border-radius: 28px;                     /* borde exterior redondeado */
+  padding: 3px;                            /* ancho del 'borde' degradado */
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  display: flex;
+  /* sombra suave alrededor del borde exterior para dar profundidad */
+  box-shadow: 0 8px 20px rgba(30, 20, 60, 0.10);
+  transition: transform 0.28s cubic-bezier(.2,.9,.2,1), box-shadow 0.28s;
+}
+
+/* INTERIOR: tarjeta blanca con esquinas redondeadas dentro del wrapper */
+.stat-card-inner {
+  background: linear-gradient(to bottom, white 60%,white 60%); /* mitad blanco / mitad tenue */
+  border-radius: 24px;                    /* ligeramente menor que el wrapper */
+  padding: 28px 20px;
+  width: 100%;
+  text-align: center;
+  /* sombra de la tarjeta (debajo) */
+  box-shadow: 0 14px 30px rgba(25, 20, 45, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover: elevar tanto wrapper como inner (manteniendo curvatura) */
+.stat-card-wrapper:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(30, 20, 60, 0.16);
+}
+.stat-card-wrapper:hover .stat-card-inner {
+  box-shadow: 0 20px 40px rgba(25, 20, 45, 0.12);
+}
+
+/* Icono (imagen 512x512) centrado y responsivo */
+.icon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.icon-img {
+  width: 72px;          /* tamaño mostrado (ajustable) */
+  height: 72px;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;  /* si quieres que el propio icono tenga esquinas suaves */
+  transition: transform 0.28s;
+}
+
+/* Pequeña animación al pasar el ratón sobre el icono (opcional y sutil) */
+.stat-card-wrapper:hover .icon-img {
+  transform: translateY(-6px) scale(1.03);
+}
+
+/* Texto: número grande y descripción */
+.stat-card-inner h2 {
+  margin: 0;
+  font-size: 32px;
+  color: #111;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.stat-card-inner p {
+  margin: 8px 0 0;
+  color: #666;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+/* Responsividad: ajustes en pantallas pequeñas */
+@media (max-width: 900px) {
+  .stat-card-inner { padding: 22px 16px; }
+  .icon-img { width: 64px; height: 64px; }
+  .stat-card-inner h2 { font-size: 30px; }
+}
+
+@media (max-width: 600px) {
+  .details_kapdal_ { padding: 36px 12px; }
+  .stat-card-wrapper { border-radius: 20px; padding: 3px; }
+  .stat-card-inner { border-radius: 16px; padding: 18px 14px; box-shadow: 0 10px 22px rgba(25,20,45,0.08); }
+  .icon-img { width: 54px; height: 54px; }
+  .stat-card-inner h2 { font-size: 24px; }
+  .stat-card-inner p { font-size: 14px; }
+}
